@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeDirector — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for the CodeDirector desktop application." />
+    <style>
+      :root {
+        --bg: #0f1117;
+        --panel: #171a23;
+        --text: #e7e9ee;
+        --muted: #9aa2b1;
+        --accent: #6ea8fe;
+        --border: #262b38;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+      }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+      a { color: var(--accent); }
+      h1 { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 4px; }
+      .updated { color: var(--muted); margin: 0 0 32px; font-size: 15px; }
+      h2 { font-size: 20px; margin: 36px 0 10px; }
+      p, li { color: #cdd2dc; }
+      ul { padding-left: 22px; }
+      li { margin-bottom: 6px; }
+      .back { display: inline-block; margin-bottom: 28px; color: var(--muted); text-decoration: none; }
+      .back:hover { color: var(--accent); }
+      code {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 1px 6px;
+        font-size: 14px;
+      }
+      hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <a class="back" href="./index.html">← CodeDirector</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: July 26, 2026</p>
+
+      <p>
+        This Privacy Policy explains how the CodeDirector desktop application
+        ("CodeDirector", "the app", "we", "us") handles information when you use
+        its video publishing features to post to YouTube and TikTok. CodeDirector
+        is a single-user desktop application that runs entirely on your own
+        computer. We do not operate any server or backend that receives your data.
+      </p>
+
+      <h2>1. Information the app accesses</h2>
+      <p>When you choose to connect an account and publish a video, CodeDirector accesses only what is needed to perform that action:</p>
+      <ul>
+        <li>
+          <strong>YouTube (Google):</strong> with your authorization under the
+          <code>youtube.upload</code> scope, permission to upload a video file to
+          your own YouTube channel with the title, description, and tags you
+          provide.
+        </li>
+        <li>
+          <strong>TikTok:</strong> with your authorization under the
+          <code>video.publish</code> scope, permission to post a video to your own
+          TikTok account. The app also reads your creator information (such as your
+          nickname and the privacy options available to your account) solely to
+          display an accurate posting screen before you confirm.
+        </li>
+        <li>
+          <strong>Authorization tokens:</strong> the OAuth access token and refresh
+          token issued by YouTube/TikTok after you sign in.
+        </li>
+      </ul>
+      <p>
+        CodeDirector does not request access to your followers, messages, watch
+        history, analytics, or any other personal data.
+      </p>
+
+      <h2>2. How information is stored</h2>
+      <ul>
+        <li>
+          Authorization tokens are stored <strong>only on your own computer</strong>
+          in a local file (for example
+          <code>~/.codedirector/publish-tokens.json</code> or the application's
+          user-data folder). They are never transmitted to us or to any third party
+          other than the respective platform (YouTube or TikTok) during upload.
+        </li>
+        <li>
+          We do not have any server, database, or cloud storage that receives or
+          holds your account information or tokens.
+        </li>
+        <li>The video you publish is a file created by you on your own computer.</li>
+      </ul>
+
+      <h2>3. How information is used</h2>
+      <p>
+        The information above is used for one purpose only: to publish the video
+        you explicitly choose to publish, to the account you authorized, at the
+        moment you click to publish. We do not use it for advertising, profiling,
+        analytics, or any secondary purpose.
+      </p>
+
+      <h2>4. Information sharing</h2>
+      <p>
+        We do not sell, rent, or share your information with anyone. The only
+        network transmission is the direct, encrypted (HTTPS) communication between
+        your computer and the official YouTube and TikTok APIs to authenticate and
+        upload your video.
+      </p>
+
+      <h2>5. Data retention and deletion</h2>
+      <p>You are in full control of the stored tokens because they live on your machine:</p>
+      <ul>
+        <li>Delete the local token file to remove stored credentials at any time.</li>
+        <li>
+          Revoke CodeDirector's access from your account settings —
+          <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account permissions</a>
+          for YouTube, or
+          <a href="https://www.tiktok.com/setting" target="_blank" rel="noopener">TikTok settings → Security &amp; permissions → Manage app permissions</a>
+          for TikTok.
+        </li>
+        <li>Uninstalling the app removes the app; deleting the token file removes the credentials.</li>
+      </ul>
+
+      <h2>6. Third-party platforms</h2>
+      <p>
+        Publishing sends your video to YouTube and TikTok, whose own privacy
+        policies then apply to the content on their platforms:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>,
+        <a href="https://www.tiktok.com/legal/page/row/privacy-policy/en" target="_blank" rel="noopener">TikTok Privacy Policy</a>.
+      </p>
+
+      <h2>7. Children's privacy</h2>
+      <p>
+        CodeDirector is a professional developer tool and is not directed to
+        children. It does not knowingly collect any information from children.
+      </p>
+
+      <h2>8. Changes to this policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Changes will be posted
+        on this page with a new "Last updated" date.
+      </p>
+
+      <h2>9. Contact</h2>
+      <p>
+        Questions about this policy: <a href="mailto:tptin.dev@gmail.com">tptin.dev@gmail.com</a>.
+      </p>
+
+      <hr />
+      <p style="color: var(--muted); font-size: 14px">
+        CodeDirector is an independent tool and is not affiliated with, endorsed by,
+        or sponsored by TikTok, Google, or YouTube.
+      </p>
+    </div>
+  </body>
+</html>
