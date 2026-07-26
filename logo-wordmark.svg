@@ -1,0 +1,19 @@
+<svg width="920" height="240" viewBox="0 0 920 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CodeDirector">
+  <defs>
+    <linearGradient id="cdWm" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- icon -->
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="200" height="200" rx="45" fill="url(#cdWm)"/>
+    <polyline points="82.8,65.6 59.4,100 82.8,134.4" fill="none" stroke="#FFFFFF" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="117.2,65.6 140.6,100 117.2,134.4" fill="none" stroke="#FFFFFF" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="89.8,80.5 89.8,119.5 116.4,100" fill="#FBBF24"/>
+  </g>
+  <!-- wordmark -->
+  <text x="252" y="152" font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="96" font-weight="700" letter-spacing="-2">
+    <tspan fill="#0F172A">Code</tspan><tspan fill="#4F46E5">Director</tspan>
+  </text>
+</svg>
