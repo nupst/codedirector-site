@@ -48,6 +48,14 @@
       }
       .card h2 { margin: 0 0 8px; font-size: 20px; }
       .card p { margin: 0; color: var(--muted); }
+      code {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 1px 6px;
+        font-size: 13px;
+        word-break: break-all;
+      }
       .links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
       a.btn {
         display: inline-block;
@@ -74,23 +82,48 @@
       </header>
 
       <div class="card">
-        <h2>What it does</h2>
+        <h2>What CodeDirector is</h2>
         <p>
-          CodeDirector is a Windows desktop application for solo developers and
-          educators. It plans a lesson from a codebase and documentation, replays
-          the steps deterministically, adds AI voice-over, camera moves, a cursor
-          overlay and subtitles, and renders a finished tutorial video.
+          <strong>CodeDirector</strong> is a Windows desktop application for solo
+          developers, educators, and open-source maintainers. It takes a codebase
+          and its documentation, plans a step-by-step programming lesson, replays
+          the coding steps deterministically inside Visual Studio Code and a
+          browser, and then adds AI voice-over, camera moves, a cursor overlay, and
+          subtitles to render a finished programming-tutorial video — so a creator
+          can produce a YouTube-style coding tutorial without recording their screen
+          or speaking on camera.
         </p>
       </div>
 
       <div class="card">
-        <h2>Publishing</h2>
+        <h2>Why CodeDirector uses YouTube access</h2>
         <p>
-          When the creator chooses to, CodeDirector can upload the finished video
-          to their own YouTube and TikTok accounts through the official APIs. The
-          creator signs in to their own account in their browser; CodeDirector
-          never sees a password and stores authorization tokens only on the
-          creator's own computer.
+          After CodeDirector renders a tutorial video on the creator's own computer,
+          its optional <em>Publish</em> feature lets the creator upload that video
+          directly to their own YouTube channel. To do this, CodeDirector requests
+          the <code>https://www.googleapis.com/auth/youtube.upload</code> scope from
+          the YouTube Data API v3. This scope is used for one purpose only: to upload
+          the finished video file — with the title, description, and tags the creator
+          entered — to the creator's own channel, only when the creator explicitly
+          clicks &ldquo;Publish&rdquo;.
+        </p>
+        <p style="margin-top: 12px">
+          The creator signs in to their own Google account in their own browser.
+          CodeDirector never sees the account password, runs entirely on the
+          creator's computer with no server or backend, and stores the OAuth
+          authorization tokens only in a local file on that same computer.
+          CodeDirector does not read the creator's videos, subscribers, comments,
+          watch history, or analytics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>TikTok publishing</h2>
+        <p>
+          The same optional Publish feature can post the finished video to the
+          creator's own TikTok account through TikTok's official Content Posting API
+          (<code>video.publish</code> scope), following the identical
+          sign-in-in-your-own-browser, tokens-stored-locally model.
         </p>
       </div>
 
