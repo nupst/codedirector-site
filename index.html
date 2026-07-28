@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="./logo-icon-256.png" />
     <meta
       name="description"
-      content="CodeDirector — a desktop tool that turns codebases and technical docs into narrated programming tutorial videos."
+      content="CodeDirector is a desktop app that creates narrated programming tutorial videos and can optionally upload them to the user's own YouTube channel."
     />
     <meta name="google-site-verification" content="vptv7xra5Z-hYcd1E3IGkr_6Hs8FX0LS95Fw4LjnbEE" />
     <style>
@@ -49,6 +49,8 @@
       }
       .card h2 { margin: 0 0 8px; font-size: 20px; }
       .card p { margin: 0; color: var(--muted); }
+      .card ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); }
+      .card li { margin-bottom: 8px; }
       code {
         background: var(--bg);
         border: 1px solid var(--border);
@@ -90,31 +92,58 @@
           and its documentation, plans a step-by-step programming lesson, replays
           the coding steps deterministically inside Visual Studio Code and a
           browser, and then adds AI voice-over, camera moves, a cursor overlay, and
-          subtitles to render a finished programming-tutorial video — so a creator
+          subtitles to render a finished programming-tutorial video, so a creator
           can produce a YouTube-style coding tutorial without recording their screen
           or speaking on camera.
         </p>
       </div>
 
       <div class="card">
-        <h2>Why CodeDirector uses YouTube access</h2>
+        <h2>App functionality</h2>
         <p>
-          After CodeDirector renders a tutorial video on the creator's own computer,
-          its optional <em>Publish</em> feature lets the creator upload that video
-          directly to their own YouTube channel. To do this, CodeDirector requests
-          the <code>https://www.googleapis.com/auth/youtube.upload</code> scope from
-          the YouTube Data API v3. This scope is used for one purpose only: to upload
-          the finished video file — with the title, description, and tags the creator
-          entered — to the creator's own channel, only when the creator explicitly
-          clicks &ldquo;Publish&rdquo;.
+          CodeDirector's core workflow is local video creation. The user selects a
+          project, writes or imports lesson notes, generates a tutorial plan,
+          previews the scripted coding sequence, renders the video on their own
+          computer, and can then save the file locally. Publishing to YouTube is an
+          optional final step and is never required to create or export a video.
         </p>
+      </div>
+
+      <div class="card">
+        <h2>YouTube API access and user data purpose</h2>
+        <p>
+          CodeDirector requests YouTube access only for its optional
+          <em>Publish to YouTube</em> feature. When the user connects their Google
+          account, CodeDirector requests the YouTube Data API v3 scope
+          <code>https://www.googleapis.com/auth/youtube.upload</code>.
+        </p>
+        <ul>
+          <li>
+            <strong>Purpose:</strong> upload the finished tutorial video file to
+            the user's own YouTube channel after the user explicitly clicks
+            "Publish".
+          </li>
+          <li>
+            <strong>Data sent to YouTube:</strong> the video file selected by the
+            user, plus the title, description, tags, and visibility settings the
+            user enters in CodeDirector.
+          </li>
+          <li>
+            <strong>OAuth data stored locally:</strong> access and refresh tokens
+            issued by Google are stored only on the user's computer so the app can
+            complete the upload and avoid asking the user to sign in every time.
+          </li>
+          <li>
+            <strong>Data not accessed:</strong> CodeDirector does not read the
+            user's existing videos, subscribers, comments, watch history,
+            playlists, analytics, or Google account password.
+          </li>
+        </ul>
         <p style="margin-top: 12px">
-          The creator signs in to their own Google account in their own browser.
-          CodeDirector never sees the account password, runs entirely on the
-          creator's computer with no server or backend, and stores the OAuth
-          authorization tokens only in a local file on that same computer.
-          CodeDirector does not read the creator's videos, subscribers, comments,
-          watch history, or analytics.
+          CodeDirector runs as a desktop app with no CodeDirector server or backend
+          receiving Google user data. The Google sign-in happens in the user's own
+          browser, and upload traffic goes directly between the user's computer and
+          Google's official YouTube APIs over HTTPS.
         </p>
       </div>
 
@@ -134,6 +163,11 @@
       </div>
 
       <footer>
+        <p>
+          This public homepage is visible without logging in. The Privacy Policy
+          link above should be the same URL configured on the Google OAuth consent
+          screen.
+        </p>
         <p>
           CodeDirector is an independent tool and is not affiliated with, endorsed
           by, or sponsored by TikTok, Google, or YouTube.
